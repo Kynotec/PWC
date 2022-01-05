@@ -1,0 +1,28 @@
+body {
+  padding-bottom: 20px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.table {
+  /*margin-top: 10px;*/
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90% !important;
+}
+
+.footer {
+  position: fixed;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  bottom: 0;
+  width: 100%;
+  /* Height of the footer*/
+  height: 50px;
+}

@@ -26,3 +26,20 @@ body {
   /* Height of the footer*/
   height: 50px;
 }
+
+.logo {
+  width: 65px;
+  margin-left: 270% !important;
+}
+
+.tab_menu {
+  margin-left: 63%;
+}
+
+.search_menu {
+  margin-right: 10%;
+}
+
+.active {
+  text-decoration: underline;
+}

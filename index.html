@@ -11,6 +11,7 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/style/style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    
     <!-- Custom styles for this template -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -47,19 +48,19 @@
           <thead >
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Preço</th>
               <th scope="col">Header</th>
               <th scope="col">Header</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
+          <tbody class="table-body">
+            <tr class="media">
+              <td class="pos"></td>
+              <td class="nome"></td>
+              <td id="preco"></td>
+              <td></td>
+              <td></td>
             </tr>
           </tbody>
         </table>
@@ -72,6 +73,7 @@
         </div>
     </footer>
 </main>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>  
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="ajax/script.js"></script>
   </body>
 </html>

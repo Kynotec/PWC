@@ -1,6 +1,18 @@
+
 body {
-  padding-bottom: 20px;
+  padding-bottom: 20px; 
 }
+
+html {
+
+background-color: #DFDFDF;
+
+}
+main {
+
+  background-color: #DFDFDF;
+
+} 
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -15,6 +27,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 90% !important;
+  background-color: white;
 }
 
 .footer {
@@ -42,4 +55,26 @@ body {
 
 .active {
   text-decoration: underline;
+}
+
+.box{
+
+  width: 1400px;
+  border: 15px solid green;
+  padding: 325px;
+  margin: 225px;
+  margin-top:50px;
+  background-color: white;
+
+}
+.lock{
+
+overflow: hidden;
+ background-color: #DFDFDF;
+
+}
+.mudarfundo{
+
+  background-color: #DFDFDF;
+
 }

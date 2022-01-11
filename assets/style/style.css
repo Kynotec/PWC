@@ -60,7 +60,7 @@ main {
 .box{
 
   width: 1400px;
-  border: 15px solid green;
+  border: 7px solid;
   padding: 325px;
   margin: 225px;
   margin-top:50px;
@@ -76,5 +76,19 @@ overflow: hidden;
 .mudarfundo{
 
   background-color: #DFDFDF;
+
+}
+.logomaior
+{
+  width: 85px;
+  margin-left: 160px;
+
+
+}
+.tit_sobre
+{
+
+margin-right: 73%;
+
 
 }

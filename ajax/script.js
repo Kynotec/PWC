@@ -36,8 +36,25 @@ $( window ).on( "load", function() {  $.ajax({
 
             $('.media-list').append(liMedia);//adiciona a linhas na tabela
        });     
-       
-        
-
     })
  })
+
+ $(function () {
+    if($('#formNome').length>0)
+    {
+        //estamos no index.html
+        $('#formNome').submit(function() { 
+            localStorage.setItem('nome' , $('#nome').val());//guarda na storage e vai buscar o val ao form
+            return;
+        });
+
+    }else if($('#contacto').length>0)
+    {
+        var name=localStorage.getItem('nome');
+        $('#nome').text(name);
+    }
+
+    $('#localClear').on('click',function() {
+        localStorage.removeItem('nome');
+    })
+});

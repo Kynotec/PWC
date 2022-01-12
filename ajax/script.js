@@ -23,7 +23,7 @@ $( window ).on( "load", function() {  $.ajax({
             {
                 $('.last24h',liMedia).text(result.ath_change_percentage+"(Subio)");
                 $('.bck-color',liMedia).css("background-color","green","opacity","0.75");
-               
+                
                 console.log(liMedia.text());
             }
             else
@@ -33,28 +33,20 @@ $( window ).on( "load", function() {  $.ajax({
             }
           
             $('#fav',liMedia).attr('src','img/adicionar fav.png');
+            $('#fav',liMedia).attr('value',result.name);
 
             $('.media-list').append(liMedia);//adiciona a linhas na tabela
        });     
     })
  })
 
- $(function () {
-    if($('#formNome').length>0)
-    {
-        //estamos no index.html
-        $('#formNome').submit(function() { 
-            localStorage.setItem('nome' , $('#nome').val());//guarda na storage e vai buscar o val ao form
-            return;
-        });
+ 
+ function favoritos()
+ {
+        var valor=document.getElementById("moeda").value;
+        alert(valor.text());
+        localStorage.setItem('nome' , $('#nome').val());//guarda na storage e vai buscar o val ao form
+         return;
+ }
 
-    }else if($('#contacto').length>0)
-    {
-        var name=localStorage.getItem('nome');
-        $('#nome').text(name);
-    }
 
-    $('#localClear').on('click',function() {
-        localStorage.removeItem('nome');
-    })
-});

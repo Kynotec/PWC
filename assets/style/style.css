@@ -86,3 +86,8 @@ a {
   text-decoration: none !important;
   color: black !important;
 }
+
+button {
+  border: none;
+  background: none;
+}

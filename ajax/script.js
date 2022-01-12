@@ -16,6 +16,7 @@ $( window ).on( "load", function() {  $.ajax({
             
             $('.pos',liMedia).text(index);//adiciona a imagem consoante o array
             $('.nome',liMedia).text(result.name);
+            $('.link',liMedia).attr('href','href="file:///C:/Users/tiago/Documents/GitHub/PWC/detalhes.html'+result.name+'"');
             $('#simbolo',liMedia).attr('src',result.image);
             $('.preco',liMedia).text(result.current_price+"$");
             if(result.ath_change_percentage>0)
@@ -30,8 +31,8 @@ $( window ).on( "load", function() {  $.ajax({
                 $('.last24h',liMedia).text(result.ath_change_percentage+"(Desceu)");
                 $('.bck-color',liMedia).css({"background-color":"red","opacity":"0.75"});  
             }
-           
-         
+          
+            $('#fav',liMedia).attr('src','img/adicionar fav.png');
 
             $('.media-list').append(liMedia);//adiciona a linhas na tabela
        });     

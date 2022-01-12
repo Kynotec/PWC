@@ -81,3 +81,8 @@ main {
 .tamanho_coluna {
   width: 15%;
 }
+
+a {
+  text-decoration: none !important;
+  color: black !important;
+}

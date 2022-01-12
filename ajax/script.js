@@ -15,8 +15,22 @@ $( window ).on( "load", function() {  $.ajax({
             var liMedia=cloneMedia.clone();
             
             $('.pos',liMedia).text(index);//adiciona a imagem consoante o array
-            $('.nome',liMedia).text(result.name);//adiciona a imagem consoante o array
-            console.log(liMedia.text());
+            $('.nome',liMedia).text(result.name);
+            $('#simbolo',liMedia).attr('src',result.image);
+            $('.preco',liMedia).text(result.current_price+"$");
+            if(result.ath_change_percentage>0)
+            {
+                $('.last24h',liMedia).text(result.ath_change_percentage+"(Subio)");
+                $('.bck-color',liMedia).css("background-color","green","opacity","0.75");
+               
+                console.log(liMedia.text());
+            }
+            else
+            {
+                $('.last24h',liMedia).text(result.ath_change_percentage+"(Desceu)");
+                $('.bck-color',liMedia).css({"background-color":"red","opacity":"0.75"});  
+            }
+           
          
 
             $('.media-list').append(liMedia);//adiciona a linhas na tabela

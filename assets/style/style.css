@@ -1,18 +1,13 @@
-
 body {
-  padding-bottom: 20px; 
+  padding-bottom: 20px;
 }
 
 html {
-
-background-color: #DFDFDF;
-
+  background-color: #dfdfdf;
 }
 main {
-
-  background-color: #DFDFDF;
-
-} 
+  background-color: #dfdfdf;
+}
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -42,7 +37,6 @@ main {
 
 .logo {
   width: 65px;
-  margin-left: 270% !important;
 }
 
 .tab_menu {
@@ -57,38 +51,33 @@ main {
   text-decoration: underline;
 }
 
-.box{
-
+.box {
   width: 1400px;
   border: 7px solid;
   padding: 325px;
   margin: 225px;
-  margin-top:50px;
+  margin-top: 50px;
   background-color: white;
-
 }
-.lock{
-
-overflow: hidden;
- background-color: #DFDFDF;
-
+.lock {
+  overflow: hidden;
+  background-color: #dfdfdf;
 }
-.mudarfundo{
-
-  background-color: #DFDFDF;
-
+.mudarfundo {
+  background-color: #dfdfdf;
 }
-.logomaior
-{
+.logomaior {
   width: 85px;
   margin-left: 160px;
-
-
 }
-.tit_sobre
-{
+.tit_sobre {
+  margin-right: 73%;
+}
 
-margin-right: 73%;
-
-
+.nome {
+  text-align: justify;
+  width: 15%;
+}
+.tamanho_coluna {
+  width: 15%;
 }

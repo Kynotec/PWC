@@ -10,17 +10,18 @@ $( window ).on( "load", function() {  $.ajax({
     .done(function(res){
         console.log(res);
         
-        $.each(res, function (index, result){              
+        $.each(res, function (index, result){          
+                
             var liMedia=cloneMedia.clone();
             
             $('.pos',liMedia).text(index);//adiciona a imagem consoante o array
             $('.nome',liMedia).text(result.name);//adiciona a imagem consoante o array
-
+            console.log(liMedia.text());
          
 
             $('.media-list').append(liMedia);//adiciona a linhas na tabela
        });     
-     
+       
         
 
     })

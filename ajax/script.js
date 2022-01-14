@@ -14,23 +14,23 @@ $( window ).on( "load", function() {  $.ajax({
                 
             var liMedia=cloneMedia.clone();
             
-            $('.pos',liMedia).text(index);//adiciona a imagem consoante o array
+            $('.pos',liMedia).text(index + 1);//adiciona a imagem consoante o array
             $('.nome',liMedia).text(result.name);
-            $('.link',liMedia).attr('href','file:///C:/Users/tiago/Documents/GitHub/PWC/detalhes.html?name='+result.name);
+            $('.link',liMedia).attr('href','detalhes.html?name='+result.name);
             $('#simbolo',liMedia).attr('src',result.image);
             $('.preco',liMedia).text(result.current_price+"$");
-            if(result.ath_change_percentage>0)
+            if(result.price_change_percentage_24h>0)
             {
-                $('.last24h',liMedia).text(result.ath_change_percentage+"(Subio)");
-                $('.bck-color',liMedia).css("background-color","green","opacity","0.75");
+                $('.last24h',liMedia).text(result.price_change_percentage_24h.toFixed(2)+"(Subio)");
+                $('.bck-color',liMedia).css("color","green","opacity","0.75");
                 
                 console.log(liMedia.text());
             }
             else
             {
-                $('.last24h',liMedia).text(result.ath_change_percentage+"(Desceu)");
-                $('.bck-color',liMedia).css({"background-color":"red","opacity":"0.75"});  
-            }
+                $('.last24h',liMedia).text(result.price_change_percentage_24h.toFixed(2)+"(Desceu)");
+                $('.bck-color',liMedia).css({"color":"red","opacity":"0.75"});  
+            } 
           
             $('#fav',liMedia).attr('src','img/adicionar fav.png');
             $('#fav',liMedia).attr('value',result.name);
@@ -50,3 +50,5 @@ $( window ).on( "load", function() {  $.ajax({
  }
 
 
+
+ document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))

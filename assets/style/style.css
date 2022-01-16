@@ -36,7 +36,7 @@ main {
 }
 
 .logo {
-  width: 65px;
+  width: 40px;
 }
 
 .tab_menu {
@@ -49,6 +49,17 @@ main {
 
 .active {
   text-decoration: underline;
+}
+.textonav{
+
+color:#dfdfdf;
+
+
+}
+.textonavdesativo{
+
+color:#DBDBDB;
+
 }
 
 .box {
@@ -73,10 +84,26 @@ main {
 .tit_sobre {
   margin-right: 73%;
 }
+.pos {
 
+
+font-size: 19px;
+
+}
 .nome {
   text-align: justify;
-  width: 15%;
+  margin-left : 2%
+  
+}
+.preco{
+
+font-size: 20px;
+
+
+}
+
+.last24h{
+  font-size: 20px;
 }
 .tamanho_coluna {
   width: 15%;
@@ -98,13 +125,77 @@ padding: 0;
 box-sizing: border-box;
 
 
+
 }
 footer{
 
  text-align: center;
- background-color: ;
+margin-top: 0%
+
+}
 
 
+
+.burguer{
+
+display:none;
+
+}
+.burguer div {
+
+width: 25px;
+height: 4px;
+background-color: white;
+margin:5px;
+margin-right: 50px;
+}
+
+
+
+@media screen and (max-width:1024px){
+
+
+
+.navbar-expand{
+
+  width: 100%;
+
+
+  }
+.nav-link {
+
+  width: 100%;
+  margin-right: 30%;
+
+}
+nav.item{
+
+width: 100%;
+margin-right: 30%;
 
 
 }
+
+}
+
+@media screen and (max-width:768px) {
+  .nav-item{
+
+    position: absolute;
+    right: 0px;
+    height: 82vh;
+    top: 8vh;
+    background-color: #198754;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+
+
+
+  }
+ 
+}
+  
+

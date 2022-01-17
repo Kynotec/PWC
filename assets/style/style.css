@@ -48,18 +48,19 @@ main {
 }
 
 .active {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 .textonav{
 
-color:#dfdfdf;
+color:white !important;
+font-size: 25px;
 
 
 }
 .textonavdesativo{
 
-color:#DBDBDB;
-
+color:rgb(245, 245, 245) !important;;
+font-size: 25px;
 }
 
 .box {
@@ -133,69 +134,3 @@ footer{
 margin-top: 0%
 
 }
-
-
-
-.burguer{
-
-display:none;
-
-}
-.burguer div {
-
-width: 25px;
-height: 4px;
-background-color: white;
-margin:5px;
-margin-right: 50px;
-}
-
-
-
-@media screen and (max-width:1024px){
-
-
-
-.navbar-expand{
-
-  width: 100%;
-
-
-  }
-.nav-link {
-
-  width: 100%;
-  margin-right: 30%;
-
-}
-nav.item{
-
-width: 100%;
-margin-right: 30%;
-
-
-}
-
-}
-
-@media screen and (max-width:768px) {
-  .nav-item{
-
-    position: absolute;
-    right: 0px;
-    height: 82vh;
-    top: 8vh;
-    background-color: #198754;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-
-
-
-
-  }
- 
-}
-  
-

@@ -22,28 +22,31 @@
     
 <main> 
     <!--NavBar-->
-    <nav class="navbar navbar-expand navbar-dark bg-success bg-gradient " aria-label="Second navbar example">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><img  class="logomaior"src="logo.png" alt="" class="logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse" >
-            <ul class="navbar-nav me-auto tab_menu" id="menu">
-              <li class="nav-item ">
-                <a class="nav-link  " aria-current="page" href="index.html"><h3 >Inicio</h3></a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link active" href="#"><h3 class="active" >Favoritos</h3></a>
-              </li>
-            </ul>
-            <form class="search_menu">
-              <input class="form-control" type="text" placeholder="Pesquisa" aria-label="Search">
-            </form>
-          </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success bg-gradient">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" ><img class="logomaior" src="logo.png" alt="" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="textonav nav-link textonavdesativo"  aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+
+              <a class="textonav nav-link  active" href="favoritos.html">Favoritos</a>
+            </li>
+         
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Procurar</button>
+          </form>
         </div>
-      </nav>
+      </div>
+    </nav>
+
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead >
@@ -67,12 +70,13 @@
         </table>
       </div>
       <!-- Footer-->
-      <footer class="footer bg-success bg-gradient">
-        <div class="container-fluid clearfix">
-            <span class="d-block text-center text-sm-left d-sm-inline-block "> @logo</span>
+      <footer class="bg-success bg-gradient">
 
+        <div>
+        <p  id="copyright" >Copyright &copy;</p>
         </div>
-    </footer>
+
+      </footer>
 </main>
     <script src="assets/js/bootstrap.bundle.min.js"></script>  
   </body>

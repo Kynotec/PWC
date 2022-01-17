@@ -32,8 +32,7 @@ $( window ).on( "load", function() {  $.ajax({
                 $('.bck-color',liMedia).css({"color":"red","opacity":"0.75"});  
             } 
           
-            $('#fav',liMedia).attr('src','img/adicionar fav.png');
-            $('#fav',liMedia).attr('value',result.name);
+            $('#fav',liMedia).attr({'src':'img/adicionar fav.png','value':result.name});
 
             $('.media-list').append(liMedia);//adiciona a linhas na tabela
        });     
@@ -43,10 +42,11 @@ $( window ).on( "load", function() {  $.ajax({
  
  function favoritos()
  {
-        var valor=document.getElementById("moeda").value;
-        alert(valor.text());
-        localStorage.setItem('nome' , $('#nome').val());//guarda na storage e vai buscar o val ao form
-         return;
+    var valor= document.getElementById("fav").value;
+   
+    alert(valor.text);
+    //localStorage.setItem('nome' , );//guarda na storage e vai buscar o val ao form
+    return;
  }
 
 

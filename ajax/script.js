@@ -8,9 +8,9 @@ $( window ).on( "load", function() {  $.ajax({
         url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd",
     })
     .done(function(res){
-        console.log(res);
-        
-        $.each(res, function (index, result){          
+        $("tr:has(td)").remove();//remove a primeira linha
+        $.each(res, function (index, result){
+           
                 
             var liMedia=cloneMedia.clone();
             
@@ -32,22 +32,25 @@ $( window ).on( "load", function() {  $.ajax({
                 $('.bck-color',liMedia).css({"color":"red","opacity":"0.75"});  
             } 
           
-            $('#fav',liMedia).attr({'src':'img/adicionar fav.png','value':result.name});
+
+            $('#fav',liMedia).val(result.name);
 
             $('.media-list').append(liMedia);//adiciona a linhas na tabela
-       });     
+       });
+    
     })
- })
 
+    
+    
+ })
  
- function favoritos()
- {
-    var valor= document.getElementById("fav").value;
-   
-    alert(valor.text);
-    //localStorage.setItem('nome' , );//guarda na storage e vai buscar o val ao form
-    return;
- }
+
+    $('#btn1').click(function() 
+    {
+        alert($("#btn1").text());
+    })
+
+
 
 
 

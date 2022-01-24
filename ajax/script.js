@@ -32,7 +32,9 @@ $( window ).on( "load", function() {  $.ajax({
                 $('.last24h',liMedia).text(result.price_change_percentage_24h.toFixed(2)+"(Desceu)");
                 $('.bck-color',liMedia).css({"color":"red","opacity":"0.75"});  
             } 
-            
+            $('#fav',liMedia).attr('src','img/adicionar fav.png');// mete todas as imagnes com os corações para adicionar
+            $("#fav",liMedia).attr("onclick","addFavoritos(this.value)");
+            $('#fav',liMedia).val(result.name);
             var value_exist=localStorage.getItem('moeda');// valor que ja existe
             if(value_exist != null)
             {
@@ -41,14 +43,14 @@ $( window ).on( "load", function() {  $.ajax({
                     //alert(value_exist+' '+result.name);
                     if(value_exist[index]==result.name)
                     {
-                        alert("teste");
-                        
+                        $('#fav',liMedia).attr('src','img/removerfav.png');
+                        $("#fav",liMedia).attr("onclick","removerFavoritos(this.value)");
                     }
                     
                 }
             }
-            $('#fav',liMedia).attr('scr','img/removerfav.png');
-            $('#fav',liMedia).val(result.name);
+            
+           
 
             $('.media-list').append(liMedia);//adiciona a linhas na tabela
        });
@@ -59,12 +61,12 @@ $( window ).on( "load", function() {  $.ajax({
     
  })
 
- function favoritos(nome_moeda){
+ function addFavoritos(nome_moeda){
     var value_exist=localStorage.getItem('moeda');// valor que ja existe
     
     if(value_exist != null)
     {
-        
+            
         var array_moedas=value_exist+','+nome_moeda;
         localStorage.setItem('moeda' ,array_moedas);//guarda na storage e vai buscar o val ao form
        
@@ -73,9 +75,42 @@ $( window ).on( "load", function() {  $.ajax({
     {
         localStorage.setItem('moeda' ,nome_moeda);//guarda na storage e vai buscar o val ao form
     }
+    alert("Moeda adicionada com sucesso");
+    window.location.reload();
    
-
-    //existing.push('tuna');
+}
+function removerFavoritos(nome_moeda) {
+    var value_exist=localStorage.getItem('moeda');// valor que ja existe
+    value_exist=value_exist.split(',');
+    var fav="";
     
+    if(value_exist.length>1)
+    {
+        for (let index = 0; index < value_exist.length; index++) {
+           
+            if(nome_moeda !=value_exist[index])
+            {   
+               if(index==0)
+               {
+                fav=value_exist[index];
+               }
+               else
+               {
+                fav=fav+','+value_exist[index];
+               }
+                
+            }
+            localStorage.setItem('moeda' ,fav);//guarda na storage e vai buscar o val ao form
+        }
+        
+    }
+    else
+    {
+        localStorage.removeItem('moeda');
+    }
+    alert("Moeda removida com sucesso");
+    window.location.reload();
+
+
 }
  

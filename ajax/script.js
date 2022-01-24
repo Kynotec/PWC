@@ -10,12 +10,21 @@ $( window ).on( "load", function() {  $.ajax({
     })
     .done(function(res){
         $("tr:has(td)").remove();//remove a primeira linha
+        
+        
         $.each(res, function (index, result){
            
-                
+               
             var liMedia=cloneMedia.clone();
             
-            $('.pos',liMedia).text(index + 1);//adiciona a imagem consoante o array
+           
+            if(index>9)
+            {
+               
+                $('tr:eq('+index+')').attr('id', 'esconder');
+            }
+            
+            $('.pos',liMedia).text(index+1);//adiciona a imagem consoante o array
             $('.nome',liMedia).text(result.name);
             $('.link',liMedia).attr('href','detalhes.html?name='+result.name);
             $('#simbolo',liMedia).attr('src',result.image);
@@ -53,13 +62,15 @@ $( window ).on( "load", function() {  $.ajax({
            
 
             $('.media-list').append(liMedia);//adiciona a linhas na tabela
+            
        });
     
     })
 
-    document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+    
     
  })
+
 
  function addFavoritos(nome_moeda){
     var value_exist=localStorage.getItem('moeda');// valor que ja existe
@@ -113,4 +124,11 @@ function removerFavoritos(nome_moeda) {
 
 
 }
+
+function Esconde() 
+{  
+
+}
+
+document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
  

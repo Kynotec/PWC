@@ -1,4 +1,5 @@
-'use strict';// importante por causa das versoes
+'use strict';
+// importante por causa das versoes
 
 var cloneMedia=$('.media').clone();//clona o codgio das linhas
 
@@ -31,8 +32,22 @@ $( window ).on( "load", function() {  $.ajax({
                 $('.last24h',liMedia).text(result.price_change_percentage_24h.toFixed(2)+"(Desceu)");
                 $('.bck-color',liMedia).css({"color":"red","opacity":"0.75"});  
             } 
-          
-
+            
+            var value_exist=localStorage.getItem('moeda');// valor que ja existe
+            if(value_exist != null)
+            {
+                value_exist=value_exist.split(',');
+                for (let index = 0; index < value_exist.length; index++) {
+                    //alert(value_exist+' '+result.name);
+                    if(value_exist[index]==result.name)
+                    {
+                        alert("teste");
+                        
+                    }
+                    
+                }
+            }
+            $('#fav',liMedia).attr('scr','img/removerfav.png');
             $('#fav',liMedia).val(result.name);
 
             $('.media-list').append(liMedia);//adiciona a linhas na tabela
@@ -40,18 +55,27 @@ $( window ).on( "load", function() {  $.ajax({
     
     })
 
-    
+    document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
     
  })
- 
 
-    $('#btn1').click(function() 
+ function favoritos(nome_moeda){
+    var value_exist=localStorage.getItem('moeda');// valor que ja existe
+    
+    if(value_exist != null)
     {
-        alert($("#btn1").text());
-    })
+        
+        var array_moedas=value_exist+','+nome_moeda;
+        localStorage.setItem('moeda' ,array_moedas);//guarda na storage e vai buscar o val ao form
+       
+    }
+    else
+    {
+        localStorage.setItem('moeda' ,nome_moeda);//guarda na storage e vai buscar o val ao form
+    }
+   
 
-
-
-
-
- document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+    //existing.push('tuna');
+    
+}
+ 

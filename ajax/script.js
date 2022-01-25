@@ -63,16 +63,17 @@ $( window ).on( "load", function() {  $.ajax({
 
             $('.media-list').append(liMedia);//adiciona a linhas na tabela
             
+           
        });
-    
+       
     })
 
     
     
+
  })
 
-
- function addFavoritos(nome_moeda){
+function addFavoritos(nome_moeda){
     var value_exist=localStorage.getItem('moeda');// valor que ja existe
     
     if(value_exist != null)
@@ -147,3 +148,4 @@ function esconde()
     }
 }
  
+

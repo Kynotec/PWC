@@ -1,5 +1,6 @@
 'use strict';
 let numero;
+
 function value()
 {
     let value;
@@ -41,13 +42,31 @@ $( window ).on( "load", function() {  $.ajax({
             $('#Volume').text(result.total_volume);
             $('#Capitalizacao').text(result.market_cap);
 
+            $('#fav').attr('src','img/adicionar fav.png');// mete todas as imagnes com os corações para adicionar
+            $("#fav").attr("onclick","addFavoritos(this.value)");
+            $('#fav').val(result.name);
+            var values=localStorage.getItem("moeda");
+            
+            if(values != null)
+            {
+                values=values.split(',');
+                for (let index = 0; index < values.length; index++) {
+                    if(values[index]==result.name)
+                    {
+                        $('#fav').attr('src','img/removerfav.png');
+                        $("#fav").attr("onclick","removerFavoritos(this.value)");
+                    }
+                    
+                }
+               
+            }
             numero=index;
+        
+
+           
             
         }
-        else
-        {
-
-        }
+      
         
    });
    $(function () {
@@ -65,3 +84,56 @@ $( window ).on( "load", function() {  $.ajax({
 
 
 })
+
+function addFavoritos(nome_moeda){
+    var value_exist=localStorage.getItem('moeda');// valor que ja existe
+    
+    if(value_exist != null)
+    {
+            
+        var array_moedas=value_exist+','+nome_moeda;
+        localStorage.setItem('moeda' ,array_moedas);//guarda na storage e vai buscar o val ao form
+       
+    }
+    else
+    {
+        localStorage.setItem('moeda' ,nome_moeda);//guarda na storage e vai buscar o val ao form
+    }
+    alert("Moeda adicionada com sucesso");
+    window.location.reload();
+   
+}
+function removerFavoritos(nome_moeda) {
+    var value_exist=localStorage.getItem('moeda');// valor que ja existe
+    value_exist=value_exist.split(',');
+    var fav="";
+    
+    if(value_exist.length>1)
+    {
+        for (let index = 0; index < value_exist.length; index++) {
+           
+            if(nome_moeda !=value_exist[index])
+            {   
+               if(index==0)
+               {
+                fav=value_exist[index];
+               }
+               else
+               {
+                fav=fav+','+value_exist[index];
+               }
+                
+            }
+            localStorage.setItem('moeda' ,fav);//guarda na storage e vai buscar o val ao form
+        }
+        
+    }
+    else
+    {
+        localStorage.removeItem('moeda');
+    }
+    alert("Moeda removida com sucesso");
+    window.location.reload();
+
+
+}

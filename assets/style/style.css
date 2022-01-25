@@ -58,7 +58,7 @@ main {
 
 .box {
   width: 1400px;
-  border: 7px solid;
+  border: 7px solid rgb(25, 135, 84);
   height: 685px;
   margin: 225px;
   margin-top: 50px;
@@ -136,4 +136,27 @@ th {
 
 .nome_moeda {
   margin-top: 30px;
+}
+
+.texto_detalhes {
+  font-size: 40px;
+  color: black;
+}
+
+.conteudo_detalhes {
+  margin-top: 3%;
+}
+
+.butao_proximo {
+  margin-left: 90% !important;
+  margin-top: 5px !important;
+}
+
+.butao_anterior {
+  margin-left: 40px;
+  margin-top: 5px !important;
+}
+
+.linha_butoes {
+  margin-top: 30px !important;
 }

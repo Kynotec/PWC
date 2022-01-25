@@ -7,7 +7,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
 
-    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
     <title>Lerpouchan Coins</title> 
 
     <!-- Bootstrap core CSS -->
@@ -48,14 +48,83 @@
       </div>
     </nav>
       
-      <div class="box text-success ">
+      <div class="box">
       <div class="container">
         <div class="row">
           <div class="col-1">
-            <img src="img/logo.png" alt="" class="logomoeda">
+            <img src="" alt="" class="logomoeda" id="logo_moeda">
           </div>
-          <div class="col-3 nome_moeda">
-            <h1>Nome da moeda</h1>
+          <div class="col-8 nome_moeda">
+            <h1 id="nome_moeda"></h1>
+          </div>
+        
+        </div>
+      </div>
+      <div class="conteudo_detalhes">
+        <div class="container">
+          <div class="row">
+            <div class="col-8 texto_detalhes">
+             <p>Raking Atual:</p>
+            </div>
+            <div class="col-4 texto_detalhes">
+              <p id="Raking_Atual"></p>
+            </div>
+          
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-8 texto_detalhes">
+             <p>Valor Atual:</p> 
+            </div>
+            <div class="col-4 texto_detalhes">
+              <p id="Valor_atual"></p>
+            </div>
+          
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-8 texto_detalhes">
+             <p>Mudança de Preço 24H:</p> 
+            </div>
+            <div class="col-4 texto_detalhes">
+              <p id="Mudanca_24"></p>
+            </div>
+          
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-8  texto_detalhes">
+             <p>Volume Total:</p> 
+            </div>
+            <div class="col-4 texto_detalhes">
+              <p id="Volume"></p>
+            </div>
+          
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-8  texto_detalhes">
+             <p>Capitalização de Mercado:</p> 
+            </div>
+            <div class="col-4 texto_detalhes">
+              <p id="Capitalizacao"></p>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row linha_butoes">
+          <div class="col-8">
+            <button type="button" class="btn btn-primary btn-lg butao_anterior" id="anterior">Anterior</button>
+           
+          </div>
+          <div class="col-2">
+            <button type="button" class="btn btn-primary btn-lg butao_proximo" id="proximo">Proximo</button>
           </div>
         
         </div>

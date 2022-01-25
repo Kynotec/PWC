@@ -1,5 +1,5 @@
 'use strict';
-/*
+let numero;
 function value()
 {
     let value;
@@ -17,53 +17,51 @@ $( window ).on( "load", function() {  $.ajax({
     url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd",
 })
 .done(function(res){
+    console.log(res);
     
     $.each(res, function (index, result){
        
-        $('.pos',liMedia).text(index+1);//adiciona a imagem consoante o array
-        $('.nome',liMedia).text(result.name);
-        $('.link',liMedia).attr('href','detalhes.html?name='+result.name);
-        $('#simbolo',liMedia).attr('src',result.image);
-        $('.preco',liMedia).text(result.current_price+"$");
-        if(result.price_change_percentage_24h>0)
+        let valor=value();
+        if(result.name==valor)
         {
-            $('.last24h',liMedia).text(result.price_change_percentage_24h.toFixed(2)+"(Subio)");
-            $('.bck-color',liMedia).css("color","green","opacity","0.75");
+            $('#Raking_Atual').text(index+1);//adiciona a imagem consoante o array
+            $('#logo_moeda').attr('src',result.image);
+            $('#nome_moeda  ').text(result.name);
+            $('#Valor_atual').text(result.current_price+"$");
+            if(result.price_change_percentage_24h>0)
+            {
+                $('#Mudanca_24').text(result.price_change_percentage_24h.toFixed(2)+"(Subio)");
+                $('#Mudanca_24').css("color","green","opacity","0.75");
+            }
+            else
+            {
+                $('#Mudanca_24').text(result.price_change_percentage_24h.toFixed(2)+"(Desceu)");
+                $('#Mudanca_24').css({"color":"red","opacity":"0.75"});  
+            }
+            $('#Volume').text(result.total_volume);
+            $('#Capitalizacao').text(result.market_cap);
+
+            numero=index;
             
-            console.log(liMedia.text());
         }
         else
         {
-            $('.last24h',liMedia).text(result.price_change_percentage_24h.toFixed(2)+"(Desceu)");
-            $('.bck-color',liMedia).css({"color":"red","opacity":"0.75"});  
-        } 
-        $('#fav',liMedia).attr('src','img/adicionar fav.png');// mete todas as imagnes com os corações para adicionar
-        $("#fav",liMedia).attr("onclick","addFavoritos(this.value)");
-        $('#fav',liMedia).val(result.name);
-        var value_exist=localStorage.getItem('moeda');// valor que ja existe
-        if(value_exist != null)
-        {
-            value_exist=value_exist.split(',');
-            for (let index = 0; index < value_exist.length; index++) {
-                //alert(value_exist+' '+result.name);
-                if(value_exist[index]==result.name)
-                {
-                    $('#fav',liMedia).attr('src','img/removerfav.png');
-                    $("#fav",liMedia).attr("onclick","removerFavoritos(this.value)");
-                }
-                
-            }
+
         }
         
-       
-
-        $('.media-list').append(liMedia);//adiciona a linhas na tabela
-        
    });
-
+   $(function () {
+        $("#proximo").click(function () {
+            window.location = "detalhes.html?name="+res[numero+1].name;
+        });    
+    });
+    $(function () {
+        $("#anterior").click(function () {
+            window.location = "detalhes.html?name="+res[numero-1].name;
+        });    
+    });
 })
 
 
 
 })
-//let valor=value();*/

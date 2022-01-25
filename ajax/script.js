@@ -18,7 +18,7 @@ $( window ).on( "load", function() {  $.ajax({
             var liMedia=cloneMedia.clone();
             
            
-            if(index>9)
+            if(index>10)
             {
                
                 $('tr:eq('+index+')').attr('id', 'esconder');
@@ -125,9 +125,25 @@ function removerFavoritos(nome_moeda) {
 
 }
 
-function Esconde() 
+//Mostra as 10 ou 100 moedas
+function esconde() 
 {  
-
+    var visibilidade=$("#esconder").css("display");
+    if(visibilidade!="none")
+    {
+        for (let index = 11; index < 101; index++) {
+            $('tr:eq('+index+')').css("display","none");
+            
+        }
+        
+    }
+    else
+    {
+        for (let index = 11; index < 101; index++) {
+            $('tr:eq('+index+')').css("display","");
+            
+        }
+    }
 }
 
 document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))

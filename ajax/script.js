@@ -146,4 +146,30 @@ function esconde()
         $('.setas').attr('src','img/seta_para_cima.png');
     }
 }
+
+
+
+$("#procurar").click(function(){
+    
+    
+    var moeda = $("#search").val(); 
+    if(moeda ==""){
+
+        alert("O campo não pode ser vazio");
+        window.location.reload();
+    }
+    else{
+        var moedalist
+
+        for(let index=1;index<101;index++){
+         moedalist=$('tr:eq('+index+') .nome').text()     
+            if(moeda != moedalist){
+                $('tr:eq('+index+')').css("display","none");
+            }
+        
+        }
+        
+    }
+        
+})
  

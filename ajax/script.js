@@ -133,9 +133,9 @@ function esconde()
     {
         for (let index = 11; index < 101; index++) {
             $('tr:eq('+index+')').css("display","none");
-            
+           
         }
-        
+        $('.setas').attr('src','img/seta_para_baixo.png');
     }
     else
     {
@@ -143,6 +143,7 @@ function esconde()
             $('tr:eq('+index+')').css("display","");
             
         }
+        $('.setas').attr('src','img/seta_para_cima.png');
     }
 }
 

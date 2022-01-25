@@ -59,9 +59,10 @@ main {
 .box {
   width: 1400px;
   border: 7px solid;
-  padding: 325px;
+  height: 685px;
   margin: 225px;
   margin-top: 50px;
+  margin-bottom: 61px;
   background-color: white;
 }
 .lock {
@@ -126,4 +127,13 @@ th {
 
 .setas {
   width: 30px;
+}
+
+.logomoeda {
+  width: 85px;
+  margin: 10px;
+}
+
+.nome_moeda {
+  margin-top: 30px;
 }

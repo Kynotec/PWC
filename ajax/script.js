@@ -146,6 +146,4 @@ function esconde()
         $('.setas').attr('src','img/seta_para_cima.png');
     }
 }
-
-document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
  

@@ -31,7 +31,7 @@ $( window ).on( "load", function() {  $.ajax({
             $('#Valor_atual').text(result.current_price+"$");
             if(result.price_change_percentage_24h>0)
             {
-                $('#Mudanca_24').text(result.price_change_percentage_24h.toFixed(2)+"(Subio)");
+                $('#Mudanca_24').text(result.price_change_percentage_24h.toFixed(2)+"(Subiu)");
                 $('#Mudanca_24').css("color","green","opacity","0.75");
             }
             else

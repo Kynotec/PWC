@@ -30,7 +30,7 @@ $( window ).on( "load", function() {  $.ajax({
                     $('.preco',liMedia).text(result.current_price+"$");
                     if(result.price_change_percentage_24h>0)
                     {
-                        $('.last24h',liMedia).text(result.price_change_percentage_24h.toFixed(2)+"(Subio)");
+                        $('.last24h',liMedia).text(result.price_change_percentage_24h.toFixed(2)+"(Subiu)");
                         $('.bck-color',liMedia).css("color","green","opacity","0.75");
                         
                         console.log(liMedia.text());

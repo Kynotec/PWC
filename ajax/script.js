@@ -149,27 +149,58 @@ function esconde()
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $("#procurar").click(function(){
+<<<<<<< HEAD
+
+    var moeda = $("#search").val().toUpperCase();
+    var encontrou_moeda=false; 
+
+=======
     
     
     var moeda = $("#search").val(); 
+>>>>>>> 5e14aa9663b0914701f02dba2e265a4a39854e4f
     if(moeda ==""){
 
         alert("O campo não pode ser vazio");
         window.location.reload();
     }
     else{
-        var moedalist
 
         for(let index=1;index<101;index++){
-         moedalist=$('tr:eq('+index+') .nome').text()     
-            if(moeda != moedalist){
-                $('tr:eq('+index+')').css("display","none");
-            }
+     var  moedalist=$('tr:eq('+index+') .nome').text().toUpperCase();    
         
+            if(moeda == moedalist){
+
+                encontrou_moeda=true;    
+                $('tr:eq('+index+')').css("display","");
+
+                continue;
+            }
+            $('tr:eq('+index+')').css("display","none");
         }
         
+             if(encontrou_moeda==false){
+        alert("Não existem moeda com esse nome");
+                  window.location = "index.html";
+             }
     }
-        
+
 })
  

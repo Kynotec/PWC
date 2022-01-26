@@ -31,7 +31,7 @@ $( window ).on( "load", function() {  $.ajax({
             $('.preco',liMedia).text(result.current_price+"$");
             if(result.price_change_percentage_24h>0)
             {
-                $('.last24h',liMedia).text(result.price_change_percentage_24h.toFixed(2)+"(Subio)");
+                $('.last24h',liMedia).text(result.price_change_percentage_24h.toFixed(2)+"(Subiu)");
                 $('.bck-color',liMedia).css("color","green","opacity","0.75");
                 
                 console.log(liMedia.text());
@@ -63,16 +63,17 @@ $( window ).on( "load", function() {  $.ajax({
 
             $('.media-list').append(liMedia);//adiciona a linhas na tabela
             
+           
        });
-    
+       
     })
 
     
     
+
  })
 
-
- function addFavoritos(nome_moeda){
+function addFavoritos(nome_moeda){
     var value_exist=localStorage.getItem('moeda');// valor que ja existe
     
     if(value_exist != null)
@@ -147,11 +148,33 @@ function esconde()
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $("#procurar").click(function(){
+<<<<<<< HEAD
 
     var moeda = $("#search").val().toUpperCase();
     var encontrou_moeda=false; 
 
+=======
+    
+    
+    var moeda = $("#search").val(); 
+>>>>>>> 5e14aa9663b0914701f02dba2e265a4a39854e4f
     if(moeda ==""){
 
         alert("O campo não pode ser vazio");

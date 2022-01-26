@@ -1,6 +1,6 @@
 'use strict';
 let numero;
-
+var verificacao = true;
 function value()
 {
     let value;
@@ -61,12 +61,10 @@ $( window ).on( "load", function() {  $.ajax({
                
             }
             numero=index;
-        
-
-           
-            
+            verificacao=false;
         }
-      
+       
+        
         
    });
    $(function () {
@@ -79,6 +77,10 @@ $( window ).on( "load", function() {  $.ajax({
             window.location = "detalhes.html?name="+res[numero-1].name;
         });    
     });
+
+    if (verificacao == true) {
+        window.location = "index.html";
+    }
 })
 
 

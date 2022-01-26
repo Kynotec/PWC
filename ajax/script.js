@@ -147,29 +147,36 @@ function esconde()
     }
 }
 
-
-
 $("#procurar").click(function(){
-    
-    
-    var moeda = $("#search").val(); 
+
+    var moeda = $("#search").val().toUpperCase();
+    var encontrou_moeda=false; 
+
     if(moeda ==""){
 
         alert("O campo não pode ser vazio");
         window.location.reload();
     }
     else{
-        var moedalist
 
         for(let index=1;index<101;index++){
-         moedalist=$('tr:eq('+index+') .nome').text()     
-            if(moeda != moedalist){
-                $('tr:eq('+index+')').css("display","none");
-            }
+     var  moedalist=$('tr:eq('+index+') .nome').text().toUpperCase();    
         
+            if(moeda == moedalist){
+
+                encontrou_moeda=true;    
+                $('tr:eq('+index+')').css("display","");
+
+                continue;
+            }
+            $('tr:eq('+index+')').css("display","none");
         }
         
+             if(encontrou_moeda==false){
+        alert("Não existem moeda com esse nome");
+                  window.location = "index.html";
+             }
     }
-        
+
 })
  

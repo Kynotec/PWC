@@ -147,12 +147,6 @@ function esconde()
         $('.setas').attr('src','img/seta_para_cima.png');
     }
 }
-<<<<<<< HEAD
- 
-
-=======
-
-
 
 $("#procurar").click(function(){
     
@@ -178,4 +172,3 @@ $("#procurar").click(function(){
         
 })
  
->>>>>>> 2fa4375f6dd748be963f53e87a21c2e22372c41b

@@ -149,33 +149,11 @@ function esconde()
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $("#procurar").click(function(){
-<<<<<<< HEAD
 
     var moeda = $("#search").val().toUpperCase();
     var encontrou_moeda=false; 
 
-=======
-    
-    
-    var moeda = $("#search").val(); 
->>>>>>> 5e14aa9663b0914701f02dba2e265a4a39854e4f
     if(moeda ==""){
 
         alert("O campo não pode ser vazio");

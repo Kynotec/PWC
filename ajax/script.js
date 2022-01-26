@@ -28,7 +28,8 @@ $( window ).on( "load", function() {  $.ajax({
             $('.nome',liMedia).text(result.name);
             $('.link',liMedia).attr('href','detalhes.html?name='+result.name);
             $('#simbolo',liMedia).attr('src',result.image);
-            $('.preco',liMedia).text(result.current_price+"$");
+
+            $('.preco',liMedia).text((result.current_price*0.89).toFixed(2)+"€");
             if(result.price_change_percentage_24h>0)
             {
                 $('.last24h',liMedia).text(result.price_change_percentage_24h.toFixed(2)+"(Subiu)");

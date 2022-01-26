@@ -28,7 +28,7 @@ $( window ).on( "load", function() {  $.ajax({
             $('#Raking_Atual').text(index+1);//adiciona a imagem consoante o array
             $('#logo_moeda').attr('src',result.image);
             $('#nome_moeda  ').text(result.name);
-            $('#Valor_atual').text(result.current_price+"$");
+            $('#Valor_atual').text((result.current_price*0.89).toFixed(2)+"€");
             if(result.price_change_percentage_24h>0)
             {
                 $('#Mudanca_24').text(result.price_change_percentage_24h.toFixed(2)+"(Subiu)");

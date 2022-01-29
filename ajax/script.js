@@ -10,7 +10,7 @@ $( window ).on( "load", function() {  $.ajax({
     })
     .done(function(res){
         $("tr:has(td)").remove();//remove a primeira linha
-        
+        console.log(res);
         
         $.each(res, function (index, result){
            
@@ -67,8 +67,11 @@ $( window ).on( "load", function() {  $.ajax({
            
        });
        
+     
     })
 
+    
+    
     
     
 
@@ -208,4 +211,3 @@ $("#procurar").click(function(){
     }
 
 })
- 

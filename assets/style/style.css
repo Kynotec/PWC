@@ -57,10 +57,11 @@ main {
 }
 
 .box {
-  width: 1400px;
+  
+  width: clamp(20vw, 2400px, 80vw);
   border: 7px solid rgb(25, 135, 84);
   height: 685px;
-  margin: 225px;
+  margin: auto;
   margin-top: 50px;
   margin-bottom: 61px;
   background-color: white;
@@ -145,16 +146,23 @@ th {
 
 .conteudo_detalhes {
   margin-top: 3%;
+ 
 }
 
 .butao_proximo {
   margin-left: 90% !important;
   margin-top: 5px !important;
+  margin :auto;
+  width: clamp(10vw, 10px, 10vw); 
+
 }
 
 .butao_anterior {
-  margin-left: 40px;
+  margin-left: 40%;
   margin-top: 5px !important;
+  margin :auto;
+  width: clamp(10vw, 10px, 10vw);
+
 }
 
 .linha_butoes {
@@ -166,5 +174,50 @@ th {
 
 .logo_fav {
   width: 45px;
-  margin-left: 240px;
+  margin-right: 75%;
+ 
+
 }
+
+@media only screen and (max-width:1080px){
+
+  .texto_detalhes{
+  font-size: 20px;
+  }
+  .box{
+  width: clamp(20vw, 750px, 80vw);
+  border: 7px solid rgb(25, 135, 84);
+  height: 400px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 61px;
+  background-color: white;
+}
+.butao_proximo {
+  margin-left: 90% !important;
+  margin-top: 5px !important;
+  margin :auto;
+  width: clamp(10vw, 10px, 10vw); 
+  font-size: 10px;
+  text-align: center;
+  line-height: 15px;
+
+}
+.butao_anterior {
+  margin-left: 90% !important;
+  margin-top: 5px !important;
+  margin :auto;
+  width: clamp(10vw, 10px, 10vw); 
+  font-size: 10px;
+  text-align: center;
+  line-height: 15px;
+
+}
+}
+.navbar-toggler{
+
+  background-color:white !important;
+  
+  
+}
+

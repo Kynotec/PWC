@@ -10,7 +10,7 @@ $( window ).on( "load", function() {  $.ajax({
     })
     .done(function(res){
         $("tr:has(td)").remove();//remove a primeira linha
-        
+        console.log(res);
         
         $.each(res, function (index, result){
            
@@ -29,7 +29,7 @@ $( window ).on( "load", function() {  $.ajax({
             $('.link',liMedia).attr('href','detalhes.html?name='+result.name);
             $('#simbolo',liMedia).attr('src',result.image);
 
-            $('.preco',liMedia).text((result.current_price*0.89).toFixed(2)+"€");
+            $('.preco',liMedia).text((result.current_price).toFixed(2)+"$");
             if(result.price_change_percentage_24h>0)
             {
                 $('.last24h',liMedia).text(result.price_change_percentage_24h.toFixed(2)+"(Subiu)");
@@ -67,8 +67,11 @@ $( window ).on( "load", function() {  $.ajax({
            
        });
        
+     
     })
 
+    
+    
     
     
 
@@ -149,6 +152,33 @@ function esconde()
     }
 }
 
+function converter_euros()
+{
+    for (let index = 1; index < 101; index++) {
+        var value=$('tr:eq('+index+') .preco').text();
+        var valor=parseFloat(value)*parseFloat(0.89);
+  
+        $('tr:eq('+index+') .preco').text(valor.toFixed(2)+"€");
+        $('#simbolo_moeda').attr('src','img/dollar-symbol.png');
+        $('#simbolo_moeda').attr("onclick","converter_dolar()");
+    }
+    
+}
+
+function converter_dolar()
+{
+    for (let index = 1; index < 101; index++) {
+        var value=$('tr:eq('+index+') .preco').text();
+
+        var valor=parseFloat(value)*parseFloat(1.13);
+  
+        $('tr:eq('+index+') .preco').text(valor.toFixed(2)+"$");
+        $('#simbolo_moeda').attr('src','img/euro.png');
+        $('#simbolo_moeda').attr("onclick","converter_euros()");
+    }
+    
+}
+
 $("#procurar").click(function(){
 
     var moeda = $("#search").val().toUpperCase();
@@ -181,4 +211,3 @@ $("#procurar").click(function(){
     }
 
 })
- 

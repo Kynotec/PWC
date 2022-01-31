@@ -77,7 +77,25 @@ $( window ).on( "load", function() {  $.ajax({
             window.location = "detalhes.html?name="+res[numero-1].name;
         });    
     });
+    $("#procurar").click(function(){
 
+        var moeda = $("#search").val().toUpperCase();
+        var encontrou_moeda=false;
+        for (let index = 0; index < res.length; index++) {
+            //alert(res[index].name.toUpperCase()+' '+moeda)
+            if(res[index].name.toUpperCase()==moeda)
+            {
+                encontrou_moeda=true;
+                window.location ="detalhes.html?name="+res[index].name;
+            }
+            
+            
+        }  
+        if(encontrou_moeda==false)
+        {
+            alert("Não existem nenhumas moedas com esse nomes");
+        }
+    })
     if (verificacao == true) {
         window.location = "index.html";
     }
@@ -139,3 +157,4 @@ function removerFavoritos(nome_moeda) {
 
 
 }
+
